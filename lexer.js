@@ -85,7 +85,7 @@ class Lexer{
         if(1 < this.code.length){
             var NextChar = this.code[1]
         }else{
-            NextChar = 0
+            var NextChar = 0
         }
 
         this.DelWhitespace()
@@ -97,7 +97,6 @@ class Lexer{
                 }else{
                     token = this.MakeToken(tokentype.EQ,this.code[0])
                 }
-                this.ReadNext()
                 break;
             case "+":
                 token = this.MakeToken(tokentype.PLUS,this.code[0])
@@ -117,7 +116,6 @@ class Lexer{
                 }else{
                     token = this.MakeToken(tokentype.BANG,this.code[0])
                 }
-                this.ReadNext()
                 break;
             case ">":
                 token = this.MakeToken(tokentype.GT,this.code[0])
